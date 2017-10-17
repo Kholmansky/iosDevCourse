@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     var currentValue : Int = 0
     @IBOutlet weak var slider: UISlider!
     var targetValue: Int = 0
+    @IBOutlet weak var targetLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,11 @@ class ViewController: UIViewController {
         targetValue = 1 + Int(arc4random_uniform(100))
         currentValue = 50
         slider.value = Float(currentValue)
+        updateLabels()
+    }
+    
+    func updateLabels(){
+        targetLabel.text = String(targetValue)
     }
 
     override func didReceiveMemoryWarning() {
