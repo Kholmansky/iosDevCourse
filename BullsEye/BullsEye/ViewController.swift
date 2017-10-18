@@ -44,18 +44,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showAlert(){
-        var difference : Int
-        if (currentValue > targetValue){
-            difference = currentValue - targetValue
-        } else if (targetValue > currentValue){
-            difference = targetValue - currentValue
-        }else{
-            difference = 0
-        }
+        let difference : Int = abs(targetValue - currentValue)
+        let points = 100 - difference
         
-        let message = "The value of the slider is: \(currentValue)" +
-        "\nThe target value is \(targetValue)" +
-        "\nThe difference is \(difference)"
+        let message = "You scored \(points) points"
         
         let alert = UIAlertController(title: "Hello World!", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Awesome", style: .default, handler: nil)
