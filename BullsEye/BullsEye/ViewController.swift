@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var targetValue = 0
     @IBOutlet weak var targetLabel: UILabel!
     var score = 0
+    @IBOutlet weak var scoreLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -32,6 +33,7 @@ class ViewController: UIViewController {
     
     func updateLabels(){
         targetLabel.text = String(targetValue)
+        scoreLabel.text = String(score)
     }
 
     override func didReceiveMemoryWarning() {
