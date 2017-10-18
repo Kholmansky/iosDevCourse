@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var targetLabel: UILabel!
     var score = 0
     @IBOutlet weak var scoreLabel: UILabel!
+    var round = 0
+    @IBOutlet weak var roundLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -28,12 +30,14 @@ class ViewController: UIViewController {
         targetValue = 1 + Int(arc4random_uniform(100))
         currentValue = 50
         slider.value = Float(currentValue)
+        round += 1
         updateLabels()
     }
     
     func updateLabels(){
         targetLabel.text = String(targetValue)
         scoreLabel.text = String(score)
+        roundLabel.text = String(round)
     }
 
     override func didReceiveMemoryWarning() {
