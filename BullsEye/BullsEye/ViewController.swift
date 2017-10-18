@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         currentValue = lroundf(slider.value)
-        startNewRound()
+        startNewGame()
     }
     
     func startNewRound(){
@@ -32,6 +32,12 @@ class ViewController: UIViewController {
         slider.value = Float(currentValue)
         round += 1
         updateLabels()
+    }
+    
+    @IBAction func startNewGame() {
+        score = 0;
+        round = 0;
+        startNewRound()
     }
     
     func updateLabels(){
