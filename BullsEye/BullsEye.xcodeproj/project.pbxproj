@@ -13,7 +13,6 @@
 		0EB5EB871F964BB9001CEF53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EB5EB861F964BB9001CEF53 /* Assets.xcassets */; };
 		0EB5EB8A1F964BB9001CEF53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB5EB881F964BB9001CEF53 /* LaunchScreen.storyboard */; };
 		0EC8DF991F97B875003E8625 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8DF981F97B875003E8625 /* AboutViewController.swift */; };
-		0EC8DF9C1F97BC90003E8625 /* scqa_mens.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EC8DF9B1F97BC90003E8625 /* scqa_mens.png */; };
 		0EC8DF9E1F97BCDE003E8625 /* AboutTheAuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8DF9D1F97BCDE003E8625 /* AboutTheAuthorViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +25,6 @@
 		0EB5EB891F964BB9001CEF53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EB5EB8B1F964BB9001CEF53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EC8DF981F97B875003E8625 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		0EC8DF9B1F97BC90003E8625 /* scqa_mens.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scqa_mens.png; sourceTree = "<group>"; };
 		0EC8DF9D1F97BCDE003E8625 /* AboutTheAuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTheAuthorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,7 +58,6 @@
 		0EB5EB7E1F964BB9001CEF53 /* BullsEye */ = {
 			isa = PBXGroup;
 			children = (
-				0EC8DF9A1F97BC33003E8625 /* Resources */,
 				0EB5EB7F1F964BB9001CEF53 /* AppDelegate.swift */,
 				0EB5EB811F964BB9001CEF53 /* ViewController.swift */,
 				0EC8DF981F97B875003E8625 /* AboutViewController.swift */,
@@ -71,14 +68,6 @@
 				0EB5EB8B1F964BB9001CEF53 /* Info.plist */,
 			);
 			path = BullsEye;
-			sourceTree = "<group>";
-		};
-		0EC8DF9A1F97BC33003E8625 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				0EC8DF9B1F97BC90003E8625 /* scqa_mens.png */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +131,6 @@
 			files = (
 				0EB5EB8A1F964BB9001CEF53 /* LaunchScreen.storyboard in Resources */,
 				0EB5EB871F964BB9001CEF53 /* Assets.xcassets in Resources */,
-				0EC8DF9C1F97BC90003E8625 /* scqa_mens.png in Resources */,
 				0EB5EB851F964BB9001CEF53 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
