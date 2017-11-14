@@ -41,7 +41,13 @@
                             <outlet property="delegate" destination="fTy-7W-YHI" id="5Qb-qP-iFJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Checklists" id="LFJ-jd-YxY"/>
+                    <navigationItem key="navigationItem" title="Checklists" id="LFJ-jd-YxY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BDE-1a-HlV">
+                            <connections>
+                                <action selector="addItem:" destination="fTy-7W-YHI" id="b9x-Dz-hfM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JoF-bn-fXa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,7 +69,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTV-Ef-AGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-431" y="-20"/>
+            <point key="canvasLocation" x="-208" y="-21"/>
         </scene>
     </scenes>
 </document>

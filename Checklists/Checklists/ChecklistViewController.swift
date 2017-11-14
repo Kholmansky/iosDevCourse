@@ -110,5 +110,10 @@ class ChecklistViewController: UITableViewController {
             cell.accessoryType = .none
         }
 	}
+    
+    @IBAction func addItem(_ sender: Any) {
+        print ("added item")
+    }
+    
 }
 
