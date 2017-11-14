@@ -15,6 +15,9 @@ class ChecklistViewController: UITableViewController {
     var row2Item: ChecklistItem
     var row3Item: ChecklistItem
     var row4Item: ChecklistItem
+    var row5Item: ChecklistItem
+    var row6Item: ChecklistItem
+    var row7Item: ChecklistItem
     
     var items: [ChecklistItem]
     
@@ -47,6 +50,21 @@ class ChecklistViewController: UITableViewController {
         row4Item.checked = false
         items.append(row4Item)
         
+        row5Item = ChecklistItem()
+        row5Item.text = "6666"
+        row5Item.checked = false
+        items.append(row5Item)
+        
+        row6Item = ChecklistItem()
+        row6Item.text = "7777"
+        row6Item.checked = false
+        items.append(row6Item)
+        
+        row7Item = ChecklistItem()
+        row7Item.text = "8888"
+        row7Item.checked = false
+        items.append(row7Item)
+        
         super.init(coder: aDecoder)
     }
 	
@@ -62,7 +80,7 @@ class ChecklistViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 8
     }
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -89,26 +107,13 @@ class ChecklistViewController: UITableViewController {
     }
 	
 	func configureCheckmark(for cell: UITableViewCell, at indexPath: IndexPath) {
-		var isChecked = false
-		if indexPath.row == 0 {
-			isChecked = row0Item.checked
-		} else if indexPath.row == 1 {
-			isChecked = row1Item.checked
-		} else if indexPath.row == 2 {
-			isChecked = row2Item.checked
-		} else if indexPath.row == 3 {
-			isChecked = row3Item.checked
-		} else if indexPath.row == 4 {
-			isChecked = row4Item.checked
-		}
-		
-		if isChecked {
-			cell.accessoryType = .checkmark
-		} else {
-			cell.accessoryType = .none
-		}
+        
+        let item = items[indexPath.row]
+        if item.checked {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
 	}
-
-
 }
 
