@@ -114,8 +114,14 @@ class ChecklistViewController: UITableViewController {
     @IBAction func addItem(_ sender: Any) {
         let newRowIndex = items.count
         let item = ChecklistItem()
-        item.text = "Hello world"
-        item.checked = false
+        //item.text = "Hello world"
+        
+        let titles = ["hello","goodbye","how are you","to do home work","to read book","to lern ios dev","to pay"]
+        let randomNumber = arc4random_uniform(UInt32(titles.count))
+        let title = titles[Int(randomNumber)]
+        
+        item.text = title
+        item.checked = true
         
         items.append(item)
         
