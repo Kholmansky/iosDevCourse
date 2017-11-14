@@ -112,7 +112,17 @@ class ChecklistViewController: UITableViewController {
 	}
     
     @IBAction func addItem(_ sender: Any) {
-        print ("added item")
+        let newRowIndex = items.count
+        let item = ChecklistItem()
+        item.text = "Hello world"
+        item.checked = false
+        
+        items.append(item)
+        
+        let indexPath = IndexPath (row: newRowIndex, section: 0)
+        let indexPaths = [indexPath]
+        tableView.insertRows(at: indexPaths, with: .automatic)
+        
     }
     
 }
