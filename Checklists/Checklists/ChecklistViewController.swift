@@ -10,57 +10,48 @@ import UIKit
 
 class ChecklistViewController: UITableViewController {
     
-    var row0Item: ChecklistItem
-    var row1Item: ChecklistItem
-    var row2Item: ChecklistItem
-    var row3Item: ChecklistItem
-    var row4Item: ChecklistItem
-    var row5Item: ChecklistItem
-    var row6Item: ChecklistItem
-    var row7Item: ChecklistItem
-    
     var items: [ChecklistItem]
     
     required init?(coder aDecoder: NSCoder) {
         
         items = [ChecklistItem]()
         
-        row0Item = ChecklistItem()
+        let row0Item = ChecklistItem()
         row0Item.text = "1111"
         row0Item.checked = false
         items.append(row0Item)
         
-        row1Item = ChecklistItem()
+        let row1Item = ChecklistItem()
         row1Item.text = "222"
         row1Item.checked = false
         items.append(row1Item)
         
-        row2Item = ChecklistItem()
+        let row2Item = ChecklistItem()
         row2Item.text = "3333"
         row2Item.checked = false
         items.append(row2Item)
         
-        row3Item = ChecklistItem()
+        let row3Item = ChecklistItem()
         row3Item.text = "4444"
         row3Item.checked = false
         items.append(row3Item)
         
-        row4Item = ChecklistItem()
+        let row4Item = ChecklistItem()
         row4Item.text = "5555"
         row4Item.checked = false
         items.append(row4Item)
         
-        row5Item = ChecklistItem()
+        let row5Item = ChecklistItem()
         row5Item.text = "6666"
         row5Item.checked = false
         items.append(row5Item)
         
-        row6Item = ChecklistItem()
+        let row6Item = ChecklistItem()
         row6Item.text = "7777"
         row6Item.checked = false
         items.append(row6Item)
         
-        row7Item = ChecklistItem()
+        let row7Item = ChecklistItem()
         row7Item.text = "8888"
         row7Item.checked = false
         items.append(row7Item)
