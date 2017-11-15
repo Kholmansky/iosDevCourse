@@ -78,6 +78,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
+                                                        <action selector="done:" destination="rOQ-Hb-oWm" eventType="editingDidEndOnExit" id="ENv-2H-AMd"/>
                                                         <outlet property="delegate" destination="rOQ-Hb-oWm" id="YwH-kk-EUj"/>
                                                     </connections>
                                                 </textField>
@@ -98,13 +99,15 @@
                                 <action selector="cancel:" destination="rOQ-Hb-oWm" id="W5b-ta-C97"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="149-XW-wpP">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="149-XW-wpP">
                             <connections>
                                 <action selector="done:" destination="rOQ-Hb-oWm" id="70n-O5-IdH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelBarButton" destination="Rah-TK-lX2" id="7KO-xJ-TLQ"/>
+                        <outlet property="doneBarButton" destination="149-XW-wpP" id="ZGM-sU-ceh"/>
                         <outlet property="textField" destination="edD-CP-H4N" id="oBe-Br-wtb"/>
                     </connections>
                 </tableViewController>
