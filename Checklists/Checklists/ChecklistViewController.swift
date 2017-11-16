@@ -9,11 +9,18 @@
 import UIKit
 
 class ChecklistViewController: UITableViewController, AddItemViewControllerDelegate {
+	
 	func addItemViewControllerDidCancel(_ controller: AddItemViewController) {
 		navigationController?.popViewController(animated: true)
 	}
 	
 	func addItemViewController(_ controller: AddItemViewController, didfinishAdding item: ChecklistItem) {
+		
+		let newRowIndex = items.count
+		items.append(item)
+		let indexPath = IndexPath(row: newRowIndex, section: 0)
+		let indexPaths = [indexPath]
+		tableView.insertRows(at: indexPaths, with: .automatic)
 		navigationController?.popViewController(animated: true)
 	}
 	
@@ -73,6 +80,13 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
         // Do any additional setup after loading the view, typically from a nib.
         navigationController?.navigationBar.prefersLargeTitles = true
     }
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "AddItem" {
+			let controller = segue.destination as! AddItemViewController
+			controller.delegate = self
+		}
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -120,11 +134,13 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
     }
 	
     func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
+		
+		let label = cell.viewWithTag(1001) as! UILabel
         
         if item.checked {
-            cell.accessoryType = .checkmark
+            label.text = "√"
         } else {
-            cell.accessoryType = .none
+            label.text = ""
         }
 	}
     
@@ -145,7 +161,6 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
         let indexPath = IndexPath (row: newRowIndex, section: 0)
         let indexPaths = [indexPath]
         tableView.insertRows(at: indexPaths, with: .automatic)
-        
     }
     
 }

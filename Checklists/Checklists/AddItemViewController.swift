@@ -40,7 +40,7 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
 		item.text = textField.text!
 		item.checked = false
 		
-		delegate?.addItemViewController(self, didfinishAdding: <#T##ChecklistItem#>)
+		delegate?.addItemViewController(self, didfinishAdding: item)
     }
     
     @IBAction func cancel(_ sender: Any) {
