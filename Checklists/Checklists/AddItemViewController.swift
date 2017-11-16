@@ -8,11 +8,18 @@
 
 import UIKit
 
+protocol AddItemViewControllerDelegate: class {
+	func addItemViewControllerDidCancel(_ controller: AddItemViewController)
+	func addItemViewController(_ controller: AddItemViewController, didfinishAdding item: ChecklistItem)
+}
+
 class AddItemViewController: UITableViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
+	
+	weak var delegate: AddItemViewControllerDelegate?
     
     override func viewDidLoad() {
 
@@ -23,20 +30,23 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
         textField.becomeFirstResponder()
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return false
-    }
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return false
+//    }
     
     @IBAction func done(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-        print("Contents of textField: \(textField.text!)")
-        
+		let item = ChecklistItem()
+		item.text = textField.text!
+		item.checked = false
+		
+		delegate?.addItemViewController(self, didfinishAdding: <#T##ChecklistItem#>)
     }
     
     @IBAction func cancel(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+		delegate?.addItemViewControllerDidCancel(self)
     }
+	
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return nil
     }
