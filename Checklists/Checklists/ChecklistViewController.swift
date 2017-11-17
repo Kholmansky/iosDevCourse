@@ -34,57 +34,8 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         }
         navigationController?.popViewController(animated: true)
     }
-	
     
-    var items: [ChecklistItem]
-    
-    required init?(coder aDecoder: NSCoder) {
-        
-        items = [ChecklistItem]()
-        
-        let row0Item = ChecklistItem()
-        row0Item.text = "1111"
-        row0Item.checked = false
-        items.append(row0Item)
-        
-        let row1Item = ChecklistItem()
-        row1Item.text = "222"
-        row1Item.checked = false
-        items.append(row1Item)
-        
-        let row2Item = ChecklistItem()
-        row2Item.text = "3333"
-        row2Item.checked = false
-        items.append(row2Item)
-        
-        let row3Item = ChecklistItem()
-        row3Item.text = "4444"
-        row3Item.checked = false
-        items.append(row3Item)
-        
-        let row4Item = ChecklistItem()
-        row4Item.text = "5555"
-        row4Item.checked = false
-        items.append(row4Item)
-        
-        let row5Item = ChecklistItem()
-        row5Item.text = "6666"
-        row5Item.checked = false
-        items.append(row5Item)
-        
-        let row6Item = ChecklistItem()
-        row6Item.text = "7777"
-        row6Item.checked = false
-        items.append(row6Item)
-        
-        let row7Item = ChecklistItem()
-        row7Item.text = "8888"
-        row7Item.checked = false
-        items.append(row7Item)
-        
-        super.init(coder: aDecoder)
-    }
-	
+    var items: [ChecklistItem] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -160,25 +111,5 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
             label.text = ""
         }
 	}
-    
-    @IBAction func addItem(_ sender: Any) {
-        let newRowIndex = items.count
-        let item = ChecklistItem()
-        //item.text = "Hello world"
-        
-        let titles = ["hello","goodbye","how are you","to do home work","to read book","to lern ios dev","to pay"]
-        let randomNumber = arc4random_uniform(UInt32(titles.count))
-        let title = titles[Int(randomNumber)]
-        
-        item.text = title
-        item.checked = true
-        
-        items.append(item)
-        
-        let indexPath = IndexPath (row: newRowIndex, section: 0)
-        let indexPaths = [indexPath]
-        tableView.insertRows(at: indexPaths, with: .automatic)
-    }
-    
 }
 
