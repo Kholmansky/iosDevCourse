@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ChecklistViewController: UITableViewController, AddItemViewControllerDelegate {
+class ChecklistViewController: UITableViewController, ItemDetailViewControllerDelegate {
 	
-	func addItemViewControllerDidCancel(_ controller: ItemDetailV) {
+	func itemDetailViewControllerDidCancel(_ controller: ItemDetailV) {
 		navigationController?.popViewController(animated: true)
 	}
 	
-    func addItemViewController(_ controller: ItemDetailV, didfinishAdding item: ChecklistItem) {
+    func itemDetailViewController(_ controller: ItemDetailV, didfinishAdding item: ChecklistItem) {
 		
 		let newRowIndex = items.count
 		items.append(item)
@@ -24,7 +24,7 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
 		navigationController?.popViewController(animated: true)
 	}
     
-    func addItemViewController(_ controller: ItemDetailV, didfinishEditing item: ChecklistItem) {
+    func itemDetailViewController(_ controller: ItemDetailV, didfinishEditing item: ChecklistItem) {
         
         if let index = items.index(of: item){
             let indexPath = IndexPath(row: index, section: 0)

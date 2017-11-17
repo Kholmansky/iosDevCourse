@@ -8,10 +8,10 @@
 
 import UIKit
 
-protocol AddItemViewControllerDelegate: class {
-	func addItemViewControllerDidCancel(_ controller: ItemDetailV)
-	func addItemViewController(_ controller: ItemDetailV, didfinishAdding item: ChecklistItem)
-    func addItemViewController(_ controller: ItemDetailV, didfinishEditing item: ChecklistItem)
+protocol ItemDetailViewControllerDelegate: class {
+	func itemDetailViewControllerDidCancel(_ controller: ItemDetailV)
+	func itemDetailViewController(_ controller: ItemDetailV, didfinishAdding item: ChecklistItem)
+    func itemDetailViewController(_ controller: ItemDetailV, didfinishEditing item: ChecklistItem)
 }
 
 class ItemDetailV: UITableViewController, UITextFieldDelegate {
@@ -21,7 +21,7 @@ class ItemDetailV: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
     var itemToEdit: ChecklistItem?
 	
-	weak var delegate: AddItemViewControllerDelegate?
+	weak var delegate: ItemDetailViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,18 +46,18 @@ class ItemDetailV: UITableViewController, UITextFieldDelegate {
     @IBAction func done(_ sender: Any) {
         if let itemToEdit = itemToEdit {
             itemToEdit.text = textField.text!
-            delegate?.addItemViewController(self, didfinishEditing: itemToEdit)
+            delegate?.itemDetailViewController(self, didfinishEditing: itemToEdit)
         } else {
             let item = ChecklistItem()
             item.text = textField.text!
             item.checked = false
             
-            delegate?.addItemViewController(self, didfinishAdding: item)
+            delegate?.itemDetailViewController(self, didfinishAdding: item)
         }
     }
     
     @IBAction func cancel(_ sender: Any) {
-		delegate?.addItemViewControllerDidCancel(self)
+		delegate?.itemDetailViewControllerDidCancel(self)
     }
 	
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
