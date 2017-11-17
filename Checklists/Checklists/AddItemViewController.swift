@@ -11,6 +11,7 @@ import UIKit
 protocol AddItemViewControllerDelegate: class {
 	func addItemViewControllerDidCancel(_ controller: AddItemViewController)
 	func addItemViewController(_ controller: AddItemViewController, didfinishAdding item: ChecklistItem)
+    func addItemViewController(_ controller: AddItemViewController, didfinishEditing item: ChecklistItem)
 }
 
 class AddItemViewController: UITableViewController, UITextFieldDelegate {
@@ -18,14 +19,21 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
+    var itemToEdit: ChecklistItem?
 	
 	weak var delegate: AddItemViewControllerDelegate?
     
     override func viewDidLoad() {
-
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
+        
+        if let item = itemToEdit{
+            title = "Edit Item"
+            textField.text = item.text
+        }
     }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         textField.becomeFirstResponder()
     }
@@ -36,6 +44,10 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
 //    }
     
     @IBAction func done(_ sender: Any) {
+        if let itemToEdit = itemToEdit {
+            itemToEdit.text = textField.text!
+            delegate?.addItemViewController(self, didfinishEditing: itemToEdit)
+        }
 		let item = ChecklistItem()
 		item.text = textField.text!
 		item.checked = false
