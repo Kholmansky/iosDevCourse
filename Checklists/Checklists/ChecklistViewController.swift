@@ -85,7 +85,7 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
 		if segue.identifier == "AddItem" {
 			let controller = segue.destination as! AddItemViewController
 			controller.delegate = self
-		}
+        }
 	}
 
     override func didReceiveMemoryWarning() {

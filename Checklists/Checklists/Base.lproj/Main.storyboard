@@ -46,6 +46,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="rOQ-Hb-oWm" kind="show" identifier="EditItem" trigger="accessoryAction" id="EvX-TF-KRs"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -146,4 +149,7 @@
             <point key="canvasLocation" x="-383" y="-21"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="EvX-TF-KRs"/>
+    </inferredMetricsTieBreakers>
 </document>
